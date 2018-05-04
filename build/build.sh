@@ -13,7 +13,7 @@ DOCKER_ARCH_ACTUAL="$(docker version -f '{{.Server.Arch}}')"
 : ${ARCHS:=""}
 
 #good defaults
-test -e ./build.config && ./build.config
+test -e ./build.config && . ./build.config
 : ${BASE:="alpine"}
 : ${REPO:="angelnu/test"}
 
