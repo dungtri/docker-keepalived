@@ -62,9 +62,6 @@ if [ "$BUILD" = true ] ; then
   cd ..
 
   #Build docker
-  if [ -n "$TARGET_IMG" ]; then
-    BASE="$TARGET_IMG/$BASE"
-  fi
   echo "Building $REPO:$ARCH_TAG using base image $BASE and qemu arch $QEMU_ARCH"
   docker build -t $REPO:$ARCH_TAG --build-arg BASE=$BASE --build-arg arch=$QEMU_ARCH .
 
