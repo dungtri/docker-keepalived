@@ -11,7 +11,9 @@ else
 fi
 
 priority=$(( 255 - $ip_byte ))
-
+emailfrom=${KEEPALIVED_EMAIL_FROM:-email@domain.com}
+emailto=${KEEPALIVED_EMAIL_TO-email@domain.com}
+smtpserver=${KEEPALIVED_SMTP_SERVER:-127.0.0.1}
 floating_ip=${KEEPALIVED_VIRTUAL_IP:-172.16.50.5}
 password=${KEEPALIVED_PASSWORD:-secret}
 
@@ -22,6 +24,9 @@ if [ n$1 == nbash ]; then
 fi
 
 # Replace values in template
+perl -p -i -e "s/\{\{ notification_email_from \}\}/$emailfrom/" $PATH_KEEPALIVED_CONF
+perl -p -i -e "s/\{\{ notification_email_to \}\}/$emailto/" $PATH_KEEPALIVED_CONF
+perl -p -i -e "s/\{\{ smtp_server \}\}/$smtpserver/" $PATH_KEEPALIVED_CONF
 perl -p -i -e "s/\{\{ interface \}\}/$interface/" $PATH_KEEPALIVED_CONF
 perl -p -i -e "s/\{\{ priority \}\}/$priority/" $PATH_KEEPALIVED_CONF
 perl -p -i -e "s/\{\{ floating_ip \}\}/$floating_ip/" $PATH_KEEPALIVED_CONF
