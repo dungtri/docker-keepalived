@@ -1,6 +1,6 @@
 # keepalived
-[![Downloads](https://img.shields.io/docker/pulls/angelnu/keepalived.svg)](https://hub.docker.com/r/angelnu/keepalived/)
-[![Build Status](https://travis-ci.org/angelnu/docker-keepalived.svg?branch=master)](https://travis-ci.org/angelnu/docker-keepalived)
+[![Downloads](https://img.shields.io/docker/pulls/dungtri/keepalived.svg)](https://hub.docker.com/r/dungtri/keepalived/)
+[![Build Status](https://travis-ci.org/dungtri/docker-keepalived.svg?branch=master)](https://travis-ci.org/dungtri/docker-keepalived)
 
 Keepalived as docker container for [mutiple archs](https://hub.docker.com/r/angelnu/keepalived/tags):
 - arm
