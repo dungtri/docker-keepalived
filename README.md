@@ -12,7 +12,7 @@ Keepalived as docker container for [mutiple archs](https://hub.docker.com/r/ange
 ```
 docker run -d -e KEEPALIVED_PRIORITY=$priority -e KEEPALIVED_VIRTUAL_IP=$VIP -e KEEPALIVED_PASSWORD=$password \
 -e KEEPALIVED_EMAIL_FROM=keepalived@domain.com -e KEEPALIVED_EMAIL_TO=keepalived@domain.com \
--e KEEPALIVED_SMTP_SERVER=smtp2tg --net=host --privileged=true dungtri/keepalived
+-e KEEPALIVED_SMTP_SERVER=smtp2tg --restart=unless-stopped --net=host --privileged=true dungtri/keepalived
 ```
 
 ### Kubernetes
