@@ -11,26 +11,7 @@ Keepalived as docker container for [mutiple archs](https://hub.docker.com/r/ange
 ### Docker
 ```
 docker run -d -e KEEPALIVED_PRIORITY=$priority -e KEEPALIVED_VIRTUAL_IP=$VIP -e KEEPALIVED_PASSWORD=$password \
---net=host --privileged=true angelnu/keepalived
-```
-
-### Swarm config with smtp2tg
-```
-version: '3.3'
-
-services:
-  smtp2tg:
-    image: dungtri/smtp2tg
-    ports:
-      - 25:25
-    deploy:
-     mode: global
-  keepalived-master:
-    image: dungtri/keepalived
-  keepalived-backup:
-    image: dungtri/keepalived
-    deploy:
-     mode: global
+--net=host --privileged=true dungtri/keepalived
 ```
 
 ### Kubernetes
